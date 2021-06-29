@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 
-import { NgbdpaginationBasicComponent } from './pagination/pagination.component';
+
 import { NgbdAccordionBasicComponent } from './accordion/accordion.component';
 import { NgbdAlertBasicComponent } from './alert/alert.component';
 import { NgbdCarouselBasicComponent } from './carousel/carousel.component';
@@ -9,6 +9,7 @@ import { NgbdDropdownBasicComponent } from './dropdown-collapse/dropdown-collaps
 import { NgbdModalBasicComponent } from './modal/modal.component';
 import { ButtonsComponent } from './buttons/buttons.component';
 import { CardsComponent } from './card/card.component';
+import { aportelogrocomponent } from './aportelogro/aportelogro.component';
 
 
 export const ComponentsRoutes: Routes = [
@@ -30,7 +31,7 @@ export const ComponentsRoutes: Routes = [
 			},
 			{
 				path: 'pagination',
-				component: NgbdpaginationBasicComponent,
+				component: aportelogrocomponent,
 				data: {
 					title: 'Pagination',
 					urls: [
