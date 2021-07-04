@@ -1,1 +1,25 @@
-<div>hola cards</div>
+
+
+<table class="table">
+    <thead class="table-light">
+    
+        <td>DNI</td>
+        <td>APELLIDOS Y NOMBRES</td>
+        <td>CAT. ACTUAL</td>
+        <td>CAT. DECEADA</td>
+        <td>EDITAR</td>
+        <td>Eliminar</td>
+    </thead>
+    <tbody *ngFor="let docente of docentes">
+      
+        <td>{{docente.dni}}</td>
+        <td>{{docente.nombre_completo}}</td>
+        <td>{{docente.categoria_actual}}</td>
+        <td>{{docente.categoria_deceada}}</td>
+    <td>
+        
+    </td>
+<td></td>  
+</tbody>
+  </table>
+ 
