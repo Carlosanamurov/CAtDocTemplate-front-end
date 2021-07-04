@@ -59,24 +59,24 @@ export const ROUTES: RouteInfo[] = [
   },
   {
     path: '/component/dropdown',
-    title: 'Dropdown',
-    icon: 'mdi mdi-arrange-bring-to-front',
+    title: 'pagos',
+    icon: 'mdi mdi-cash',
     class: '',
     extralink: false,
     submenu: []
   },
   {
     path: '/component/modal',
-    title: 'Modal',
-    icon: 'mdi mdi-tablet',
+    title: 'concurso',
+    icon: 'mdi mdi-calendar',
     class: '',
     extralink: false,
     submenu: []
   },
   {
-    path: '/component/pagination',
-    title: 'Pagination',
-    icon: 'mdi mdi-backburger',
+    path: '/component/aportesylogros',
+    title: 'Aportes y Logros',
+    icon: 'mdi mdi-trophy',
     class: '',
     extralink: false,
     submenu: []

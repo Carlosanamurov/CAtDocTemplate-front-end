@@ -18,13 +18,16 @@ import { CardsComponent } from './card/card.component';
 import { aportelogrocomponent } from './aportelogro/aportelogro.component';
 
 
+
+
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forChild(ComponentsRoutes),
     FormsModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    
   ],
   declarations: [
     aportelogrocomponent,

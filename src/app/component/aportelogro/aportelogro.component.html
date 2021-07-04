@@ -1,1 +1,85 @@
-<div> Hola Pagination</div>
+<div class="card  " style="border-radius: 10px;">
+  <div class="card-header" style="background-color: #6c1a3f; border-start-end-radius: 10px;
+  border-start-start-radius: 10px; " ><h3 style="color:rgb(255, 255, 255);">Aportes y logros</h3></div>
+  <div class="card-body text-danger">
+    <table class="table">
+        <thead class="table-light">
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">INSTUTUCIÓN</th>
+                <th scope="col">PAIS</th>
+                <th scope="col">DETALLE DEL LOGRO</th>
+                <th scope="col">FECHA</th>
+                <th scope="col">ACCIONES</th>
+              
+
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let lista of aportes; let i=index">
+                <th scope="row">{{i+1}}</th>
+                <td>{{lista.institucion}}</td>
+                <td></td>
+                <td>{{lista.datallelogro}}</td>
+                <td>{{lista.fechalogro}}</td>
+                
+               
+                <td><button type="button" class="btn btn-outline-danger"><i class="fa fa-trash" aria-hidden="true"></i></button >
+                <button  type="button" class="btn btn-outline-secondary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></td>
+            </tr>
+
+
+        </tbody>
+        
+    </table>
+    
+        
+  </div>
+</div>
+
+
+
+
+
+<div class="card "   style="border-radius: 10px;">
+    <div class="card-header" style="background-color: #6c1a3f; border-start-end-radius: 10px;
+    border-start-start-radius: 10px;"><h3 style="color:rgb(255, 255, 255);">Aportes y logros</h3></div>
+    <div class="card-body text-danger">
+      <table class="table">
+          <thead class="table-light">
+              <tr>
+                  <th scope="col"></th>
+                  <th scope="col">INSTUTUCIÓN</th>
+                  <th scope="col">PAIS</th>
+                  <th scope="col">DETALLE DEL LOGRO</th>
+                  <th scope="col">FECHA</th>
+                  <th scope="col">ACCIONES</th>
+                
+  
+              </tr>
+          </thead>
+  
+          <tbody>
+              <tr >
+                  <th scope="row"></th>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                 
+                  <td><button type="button" class="btn btn-outline-danger"><i class="fa fa-trash" aria-hidden="true"></i></button >
+                  <button  type="button" class="btn btn-outline-secondary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></td>
+              </tr>
+  
+  
+          </tbody>
+          
+      </table>
+      
+          
+    </div>
+  </div>
+  
+
+

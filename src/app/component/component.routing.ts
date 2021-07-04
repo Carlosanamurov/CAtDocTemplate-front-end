@@ -30,14 +30,14 @@ export const ComponentsRoutes: Routes = [
 				}
 			},
 			{
-				path: 'pagination',
+				path: 'aportesylogros',
 				component: aportelogrocomponent,
 				data: {
-					title: 'Pagination',
+					title: 'aportesylogros',
 					urls: [
 						{ title: 'Dashboard', url: '/dashboard' },
 						{ title: 'ngComponent' },
-						{ title: 'Pagination' }
+						{ title: 'aportesylogros' }
 					]
 				}
 			},
