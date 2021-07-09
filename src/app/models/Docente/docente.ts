@@ -1,8 +1,14 @@
 export class Docente {
-nombre_completo?:String;
-dni?:String;
-categoria_actual?:String;
-categoria_deceada?:String;
+	idusuario: number=0;
+    nombres :string="";
+	apellidos :string="";
+	dni :string="";
+	celular :string="";
+	telefono_fijo :string="";
+	correo? :string="";
+	cat_actual: number=0;
+	cat_deceada:number=0;
+	password:string="";
     constructor() {
 
     }
