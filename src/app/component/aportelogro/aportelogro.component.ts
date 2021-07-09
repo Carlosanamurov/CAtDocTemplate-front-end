@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { data } from 'jquery';
 
 import { Aportelogro } from 'src/app/models/aportelogro';
 import { AportesService } from 'src/app/services/aportes.service';
@@ -9,7 +10,17 @@ import { AportesService } from 'src/app/services/aportes.service';
 })
 export class aportelogrocomponent implements OnInit {
 	aportes: Aportelogro[] = [];
+	aporte: Aportelogro={
+		idportelogro: 0,
+		institucion:'',
+		idpais: 0,
+		fechalogro: '',
+		detallelogro:'',
+		archivologro:'',
+		iddocente:0
+	};
 	constructor( private aportesService: AportesService ){}
+
 
 	ngOnInit(): void {
 		this.obteberaportes();
@@ -22,5 +33,8 @@ export class aportelogrocomponent implements OnInit {
 			 console.log(error);
 		 })
 		 
+	 }
+	 create(){
+		 console.log(this.aporte); 
 	 }
 }

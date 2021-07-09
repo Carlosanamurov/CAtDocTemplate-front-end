@@ -12,7 +12,9 @@ import { CardsComponent } from './card/card.component';
 import { aportelogrocomponent } from './aportelogro/aportelogro.component';
 
 
+
 export const ComponentsRoutes: Routes = [
+	
 	{
 		path: '',
 		children: [
@@ -29,6 +31,7 @@ export const ComponentsRoutes: Routes = [
 					]
 				}
 			},
+
 			{
 				path: 'aportesylogros',
 				component: aportelogrocomponent,

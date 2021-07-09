@@ -1,6 +1,12 @@
+<div class="container">
 <div class="card  " style="border-radius: 10px;">
   <div class="card-header" style="background-color: #6c1a3f; border-start-end-radius: 10px;
-  border-start-start-radius: 10px; " ><h3 style="color:rgb(255, 255, 255);">Aportes y logros</h3></div>
+  border-start-start-radius: 10px; display: flex; justify-content: space-between;"  >
+  <h3 style="color:rgb(255, 255, 255); ">Aportes y logros</h3>
+<button  type="button" class="btn btn-outline-secondary" data-toggle='modal' data-target='#modal1' 
+style="background-color: rgba(209, 176, 105, 0.966); border-color: none; border-radius: 8px;" >
+    <i class="fa fa-plus" aria-hidden="true"></i></button> 
+</div>
   <div class="card-body text-danger">
     <table class="table">
         <thead class="table-light">
@@ -21,7 +27,7 @@
                 <th scope="row">{{i+1}}</th>
                 <td>{{lista.institucion}}</td>
                 <td></td>
-                <td>{{lista.datallelogro}}</td>
+                <td>{{lista.detallelogro}}</td>
                 <td>{{lista.fechalogro}}</td>
                 
                
@@ -37,14 +43,68 @@
         
   </div>
 </div>
+<div class="container"> 
+<div class="modal" tabindex="-1" id="modal1" >
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: #852952;">
+          <h4 class="modal-title" style="color:rgb(255, 255, 255); "> NUEVO APORTE Y LOGRO</h4>
+        </div>
+        <div class="modal-body">
+            <form class="row g-3">
+                <div class="col-md-6">
+                  <label for="inputEmail4" class="form-label">INSTITUCIÓN:</label>
+                  <input type="text" class="form-control" id="inputEmail4" [(ngModel)]="aporte.institucion">
+                </div>
+               
+                <div class="col-12">
+                  <label for="inputAddress" class="form-label">DETALLE LOGRO:</label>
+                  <input type="text" class="form-control" id="inputAddress" [(ngModel)]="aporte.detallelogro" >
+                </div>
+                
+                <div class="col-md-6">
+                  <label for="inputCity" class="form-label">FECHA DEL APORTE:</label>
+                  <input type="date" class="form-control" id="inputCity" [(ngModel)]="aporte.fechalogro">
+                </div>
+                <br>
+                <div class="col-md-4">
+                    <div class="form-floating">
+                        <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+                          <option selected>Open this select menu</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
+                        
+                      </div>
+                </div>
+                <div class="col-md-4">
+                    <br>
+                    <input class="form-control form-control-sm" id="formFileSm" type="file" [(ngModel)]="aporte.archivologro">
+                </div>
+              </form>
+           
+
+
+        </div>
+        <div class="modal-footer" >
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="create()" >Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>      
+</div>
 
 
 
 
 
-<div class="card "   style="border-radius: 10px;">
+<div class="card  " style="border-radius: 10px;">
     <div class="card-header" style="background-color: #6c1a3f; border-start-end-radius: 10px;
-    border-start-start-radius: 10px;"><h3 style="color:rgb(255, 255, 255);">Aportes y logros</h3></div>
+    border-start-start-radius: 10px; display: flex; justify-content: space-between;"  ><h3 style="color:rgb(255, 255, 255); ">Capacidad Docente</h3>
+  <button  type="button" class="btn btn-outline-secondary" style="background-color: rgba(209, 176, 105, 0.966); border-color: none; border-radius: 8px;" ><i class="fa fa-plus" aria-hidden="true"></i></button> 
+  </div>
     <div class="card-body text-danger">
       <table class="table">
           <thead class="table-light">
@@ -81,5 +141,5 @@
     </div>
   </div>
   
-
+</div>
 

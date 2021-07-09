@@ -16,6 +16,8 @@ import { NgbdModalBasicComponent } from './modal/modal.component';
 import { ButtonsComponent } from './buttons/buttons.component';
 import { CardsComponent } from './card/card.component';
 import { aportelogrocomponent } from './aportelogro/aportelogro.component';
+import { AporteFormComponent } from './aporte-form/aporte-form.component';
+
 
 
 
@@ -38,7 +40,9 @@ import { aportelogrocomponent } from './aportelogro/aportelogro.component';
     NgbdDropdownBasicComponent,
     NgbdModalBasicComponent,
     ButtonsComponent,
-    CardsComponent
+    CardsComponent,
+    AporteFormComponent,
+    
     
   ]
 })

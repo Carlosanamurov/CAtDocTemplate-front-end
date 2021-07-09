@@ -1,14 +1,12 @@
-export class Aportelogro {
+export interface Aportelogro {
     idportelogro?:number;
     institucion?:String;
     idpais?:number;
-    fechalogro?:String;
-    datallelogro?:String;
+    fechalogro?:string;
+    detallelogro?:String;
     archivologro?:String;
-    iddocente?:String;
+    iddocente?:number;
      
-    constructor() {
-
-    }
+    
 
 }

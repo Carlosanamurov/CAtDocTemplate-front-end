@@ -37,6 +37,7 @@
     "ng-apexcharts": "^1.5.4",
     "ng2-charts": "^2.4.2",
     "ngx-perfect-scrollbar": "6.1.0",
+    "popper.js": "^1.16.1",
     "rxjs": "^6.5.4",
     "rxjs-compat": "^6.5.2",
     "sass": "^1.29.0",
