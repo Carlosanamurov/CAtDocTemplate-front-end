@@ -18,7 +18,7 @@ export class AportesService {
     return this.http.get(`${this.URL}/aportelogro/${id}`);
   }
   deleteAporte(id:String){
-    return this.http.delete(`${this.URL}/aportelogro/${id}`);
+    return this.http.delete(`${this.URL}/aportelogro/delete/${id}`);
   }
   saveAporte(aporte:Aportelogro){
     return this.http.post(`${this.URL}/aportelogro/add/`,aporte);

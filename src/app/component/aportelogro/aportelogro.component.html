@@ -31,7 +31,7 @@ style="background-color: rgba(209, 176, 105, 0.966); border-color: none; border-
                 <td>{{lista.fechalogro}}</td>
                 
                
-                <td><button type="button" class="btn btn-outline-danger"><i class="fa fa-trash" aria-hidden="true"></i></button >
+                <td><button type="button" class="btn btn-outline-danger" (click)="del(lista.idportelogro)" ><i class="fa fa-trash" aria-hidden="true"></i></button >
                 <button  type="button" class="btn btn-outline-secondary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></td>
             </tr>
 
@@ -51,13 +51,13 @@ style="background-color: rgba(209, 176, 105, 0.966); border-color: none; border-
           <h4 class="modal-title" style="color:rgb(255, 255, 255); "> NUEVO APORTE Y LOGRO</h4>
         </div>
         <div class="modal-body">
-            <form class="row g-3">
+            
                 <div class="col-md-6">
                   <label for="inputEmail4" class="form-label">INSTITUCIÓN:</label>
                   <input type="text" class="form-control" id="inputEmail4" [(ngModel)]="aporte.institucion">
                 </div>
                
-                <div class="col-12">
+                <div class="col-8">
                   <label for="inputAddress" class="form-label">DETALLE LOGRO:</label>
                   <input type="text" class="form-control" id="inputAddress" [(ngModel)]="aporte.detallelogro" >
                 </div>
@@ -82,7 +82,7 @@ style="background-color: rgba(209, 176, 105, 0.966); border-color: none; border-
                     <br>
                     <input class="form-control form-control-sm" id="formFileSm" type="file" [(ngModel)]="aporte.archivologro">
                 </div>
-              </form>
+              
            
 
 
