@@ -1,11 +1,10 @@
 
 
-export interface User {
-    idusuario?: number;
-    username?:string;
-    password?:string
-    token?:string;
+export class User {
+   
+    username?:string="";
+    password?:string="";
+    
+    constructor(){}
 }
-export interface userResponse{
-    accessToken:String;
-}
+

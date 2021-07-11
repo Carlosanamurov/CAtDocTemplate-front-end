@@ -118,7 +118,7 @@ export const ComponentsRoutes: Routes = [
 			},
 			{
 				path: 'buttons',
-				component: ButtonsComponent,
+				component: ButtonsComponent, 
 				data: {
 					title: 'Button',
 					urls: [
@@ -126,7 +126,8 @@ export const ComponentsRoutes: Routes = [
 						{ title: 'ngComponent' },
 						{ title: 'Button' }
 					]
-				}
+				},
+				
 			}
 		]
 	}

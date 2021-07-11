@@ -28,6 +28,7 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { LoginComponent } from './login/login.component';
+import {JwtHelperService, JWT_OPTIONS} from '@auth0/angular-jwt';
 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -47,6 +48,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     BreadcrumbComponent,
     LoginComponent,
     
+    
   ],
   imports: [
     CommonModule,
@@ -59,9 +61,16 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     
     
     
+    
+    
     RouterModule.forRoot(Approutes, { useHash: false, relativeLinkResolution: 'legacy' })
   ],
   providers: [
+    JwtHelperService,
+    {
+      provide:JWT_OPTIONS,
+      useValue:JWT_OPTIONS
+    },
     {
       provide: LocationStrategy,
       useClass: PathLocationStrategy
@@ -71,6 +80,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
     }
   ],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule {}

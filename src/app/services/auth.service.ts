@@ -1,41 +1,34 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+import { JwtHelperService } from '@auth0/angular-jwt';
 import { Observable, throwError } from 'rxjs';
 import { catchError,map } from 'rxjs/operators';
-import { User, userResponse } from '../models/user';
+import { User } from '../models/user';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  users: User= new User();
   private URL= 'http://localhost:3000/api/auth/';
-
-  constructor( private http: HttpClient) { }
-  login(authData:User): Observable<userResponse | void>{
-    return this.http
-    .post<userResponse>(`${this.URL}` ,authData)
-    .pipe(
-      map((res : userResponse) =>{
-        console.log(res); 
-
-        
-       }),
-       catchError((err) => this. handlerError(err))
-     );
-
-     
+  
+  constructor( private http: HttpClient, private router:Router, private jwtHelper:JwtHelperService) { }
+  signin(user:User){
+    return this.http.post(`${this.URL}`,user);
   }
-  private handlerError(err:any): Observable<never> {
-    let errorMessage = 'Error data';
-    if(err){
-      errorMessage = `Error: code ${err.message} `;
-
-    }
-    window.alert(errorMessage);
-    return throwError(errorMessage);
-
+  
+  isAuth():boolean {
     
-  }
+   const token = localStorage.getItem('token');
+   if (this.jwtHelper.isTokenExpired('token') || !localStorage.getItem('token')) {
+     return false;
+   }
+  return true;
+  
+   
+ }
 
 }
  
