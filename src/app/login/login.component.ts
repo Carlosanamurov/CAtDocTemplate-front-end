@@ -6,6 +6,8 @@ import { User } from '../models/user';
 import { AuthService } from '../services/auth.service';
 import swal from 'sweetalert2';
 
+declare var function1:any;
+declare var function2:any;
 
 @Component({
   selector: 'app-login',
@@ -28,6 +30,8 @@ export class LoginComponent implements OnInit {
   
   }
    login(){ 
+    
+    
      console.log(this.users);
      this.authService.signin(this.users)
      .subscribe(
@@ -43,4 +47,10 @@ export class LoginComponent implements OnInit {
      )
 
    }
+   regis(){
+     
+   }  
+
+   
+   
 }
