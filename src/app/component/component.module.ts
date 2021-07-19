@@ -17,6 +17,7 @@ import { ButtonsComponent } from './buttons/buttons.component';
 import { CardsComponent } from './card/card.component';
 import { aportelogrocomponent } from './aportelogro/aportelogro.component';
 import { AporteFormComponent } from './aporte-form/aporte-form.component';
+import { UsuarioComponent } from './usuario/usuario.component';
 
 
 
@@ -42,6 +43,7 @@ import { AporteFormComponent } from './aporte-form/aporte-form.component';
     ButtonsComponent,
     CardsComponent,
     AporteFormComponent,
+    UsuarioComponent,
     
     
   ]

@@ -23,11 +23,11 @@ export const ComponentsRoutes: Routes = [
 				path: 'card',
 				component: CardsComponent,
 				data: {
-					title: 'Cards',
+					title: '',
 					urls: [
-						{ title: 'Dashboard', url: '/dashboard' },
+						{ title: 'Capacidad Docente', url: '/dashboard' },
 						{ title: 'ngComponent' },
-						{ title: 'Cards' }
+						{ title: 'Capacidada  Docente' }
 					]
 				}
 			},
@@ -36,7 +36,7 @@ export const ComponentsRoutes: Routes = [
 				path: 'aportesylogros',
 				component: aportelogrocomponent,
 				data: {
-					title: 'aportesylogros',
+					title: 'Aportes y Capacidad',
 					urls: [
 						{ title: 'Dashboard', url: '/dashboard' },
 						{ title: 'ngComponent' },
@@ -48,7 +48,7 @@ export const ComponentsRoutes: Routes = [
 				path: 'accordion',
 				component: NgbdAccordionBasicComponent,
 				data: {
-					title: 'Accordion',
+					title: 'Capacidad Docente',
 					urls: [
 						{ title: 'Dashboard', url: '/dashboard' },
 						{ title: 'ngComponent' },
@@ -60,7 +60,7 @@ export const ComponentsRoutes: Routes = [
 				path: 'alert',
 				component: NgbdAlertBasicComponent,
 				data: {
-					title: 'Alert',
+					title: 'Desempeño Docente',
 					urls: [
 						{ title: 'Dashboard', url: '/dashboard' },
 						{ title: 'ngComponent' },
@@ -72,7 +72,7 @@ export const ComponentsRoutes: Routes = [
 				path: 'carousel',
 				component: NgbdCarouselBasicComponent,
 				data: {
-					title: 'Carousel',
+					title: 'Investigación',
 					urls: [
 						{ title: 'Dashboard', url: '/dashboard' },
 						{ title: 'ngComponent' },
@@ -96,11 +96,11 @@ export const ComponentsRoutes: Routes = [
 				path: 'dropdown',
 				component: NgbdDropdownBasicComponent,
 				data: {
-					title: 'Dropdown',
+					title: 'Vinculacion Con El Medio',
 					urls: [
 						{ title: 'Dashboard', url: '/dashboard' },
 						{ title: 'ngComponent' },
-						{ title: 'Dropdown' }
+						{ title: 'Vinculacion con El medio' }
 					]
 				}
 			},
@@ -108,7 +108,7 @@ export const ComponentsRoutes: Routes = [
 				path: 'modal',
 				component: NgbdModalBasicComponent,
 				data: {
-					title: 'Modal',
+					title: 'Capacidad Profesional',
 					urls: [
 						{ title: 'Dashboard', url: '/dashboard' },
 						{ title: 'ngComponent' },

@@ -11,7 +11,7 @@ export const ROUTES: RouteInfo[] = [
   },
   {
     path: '/dashboard',
-    title: 'Dashboard',
+    title: 'Formacion Academica',
     icon: 'mdi mdi-gauge',
     class: '',
     extralink: false,
@@ -27,7 +27,7 @@ export const ROUTES: RouteInfo[] = [
   },
   {
     path: '/component/card',
-    title: 'Card',
+    title: 'Docente Participante',
     icon: 'mdi mdi-blur-radial',
     class: '',
     extralink: false,
@@ -35,7 +35,7 @@ export const ROUTES: RouteInfo[] = [
   },
   {
     path: '/component/accordion',
-    title: 'Accordion',
+    title: 'Capacidad Docente',
     icon: 'mdi mdi-equal',
     class: '',
     extralink: false,
@@ -43,7 +43,7 @@ export const ROUTES: RouteInfo[] = [
   },
   {
     path: '/component/alert',
-    title: 'Alert',
+    title: 'desempeño Docente',
     icon: 'mdi mdi-message-bulleted',
     class: '',
     extralink: false,
@@ -51,7 +51,7 @@ export const ROUTES: RouteInfo[] = [
   },
   {
     path: '/component/carousel',
-    title: 'Carousel',
+    title: 'Investigaciones',
     icon: 'mdi mdi-view-carousel',
     class: '',
     extralink: false,
@@ -59,7 +59,7 @@ export const ROUTES: RouteInfo[] = [
   },
   {
     path: '/component/dropdown',
-    title: 'pagos',
+    title: 'Vinculación con el medio',
     icon: 'mdi mdi-cash',
     class: '',
     extralink: false,
@@ -67,7 +67,7 @@ export const ROUTES: RouteInfo[] = [
   },
   {
     path: '/component/modal',
-    title: 'concurso',
+    title: 'Capacidad Profesional',
     icon: 'mdi mdi-calendar',
     class: '',
     extralink: false,
@@ -75,7 +75,7 @@ export const ROUTES: RouteInfo[] = [
   },
   {
     path: '/component/aportesylogros',
-    title: 'Aportes y Logros',
+    title: 'Aportes y Capacidad',
     icon: 'mdi mdi-trophy',
     class: '',
     extralink: false,
