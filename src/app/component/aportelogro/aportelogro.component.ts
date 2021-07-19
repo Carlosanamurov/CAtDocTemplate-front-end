@@ -1,10 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ElementRef,ViewChild } from '@angular/core';
+import { AngularFireStorage } from '@angular/fire/storage';
 import { Router } from '@angular/router';
 import { data } from 'jquery';
 
 import { Aportelogro } from 'src/app/models/aportelogro';
 import { AportesService } from 'src/app/services/aportes.service';
 import swal from 'sweetalert2';
+import { Observable } from 'rxjs/internal/Observable';
+import {finalize} from 'rxjs/operators';
 
 @Component({
 	selector: 'app-ngbd-pagination',
@@ -13,12 +16,31 @@ import swal from 'sweetalert2';
 export class aportelogrocomponent implements OnInit {
 	aportes: Aportelogro[] = [];
 	aporte: Aportelogro = new Aportelogro();
-	constructor( private aportesService: AportesService , private router:Router){}
-
+	aporte2: Aportelogro = new Aportelogro();
+	constructor(private storage: AngularFireStorage, private aportesService: AportesService , private router:Router){}
+	@ViewChild('imageDoc') inputImageDoc?: ElementRef;
+	uploadPercent!: Observable<any>;
+	urlImage!: Observable<any>;
 
 	ngOnInit(): void {
 		this.obteberaportes();
 	}
+
+	onUpload(e:any){
+	
+		   const id =Math.random().toString(36).substring(2);
+		   const file = e.target.files[0];
+		   const filePath=`Evidencias/profile_${id}`;
+		   const ref = this.storage.ref(filePath);
+		   const task = this.storage.upload(filePath,file);
+		   this.uploadPercent = task.percentageChanges();
+		   task.snapshotChanges().pipe(  finalize(() => this.urlImage = ref.getDownloadURL())  ).subscribe();
+		   
+	  }
+
+
+
+
 	 obteberaportes(){
 		 this.aportesService.getAporte().subscribe(data =>{
 			 console.log(data);
@@ -31,6 +53,7 @@ export class aportelogrocomponent implements OnInit {
 	 create(){
 		 delete this.aporte.idportelogro;
 		 delete this.aporte.iddocente;
+		 this.aporte.archivologro=this.inputImageDoc?.nativeElement.value;
 		 console.log(this.aporte); 
 		 this.aportesService.saveAporte(this.aporte)
 		 .subscribe(
@@ -42,6 +65,16 @@ export class aportelogrocomponent implements OnInit {
 			 err => console.error(err)
 		 )
 		
+	 }
+	 view(url:any){
+		 this.aporte2.archivologro=url;
+		 console.log(this.aporte2.archivologro)
+		this.obteberaportes();
+		 
+	 }
+	 close(){
+		 
+		 this.obteberaportes();
 	 }
 
 	 del(id:String){

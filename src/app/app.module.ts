@@ -29,6 +29,12 @@ import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { LoginComponent } from './login/login.component';
 import {JwtHelperService, JWT_OPTIONS} from '@auth0/angular-jwt';
+import {AngularFireStorageModule}  from '@angular/fire/storage'
+import {AngularFireModule} from '@angular/fire' ;
+import { environment } from 'src/environments/environment';
+
+
+
 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -58,6 +64,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     HttpClientModule,
   	PerfectScrollbarModule,
     NgbModule,
+    AngularFireStorageModule,
+    AngularFireModule.initializeApp(environment.firebase),
     
     
     
