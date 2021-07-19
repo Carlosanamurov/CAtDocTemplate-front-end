@@ -17,7 +17,7 @@ style="background-color: rgba(209, 176, 105, 0.966); border-color: none; border-
                 <th scope="col">DETALLE DEL LOGRO</th>
                 <th scope="col">FECHA</th>
                 <th scope="col">ACCIONES</th>
-                <th scope="col">ARCHIVO</th>
+               
               
 
             </tr>
@@ -29,15 +29,15 @@ style="background-color: rgba(209, 176, 105, 0.966); border-color: none; border-
                 <td>{{lista.institucion}}</td>
        
                 <td>{{lista.detallelogro}}</td>
-                <td>{{lista.fechalogro}}</td>
+                <td>{{lista.fechalogro | date: 'yyyy-MM-dd '}}</td>
                 
                
                 <td>
                 <button type="button" class="btn btn-outline-danger" (click)="del(lista.idportelogro)" ><i class="fa fa-trash" aria-hidden="true"></i></button >
                 <button  type="button" class="btn btn-outline-secondary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
                 
-              </td>
-              <td><button  type="button" class="btn btn-outline-warning"><i class="fa fa-eye" aria-hidden="true"></i></button></td>
+              <button  type="button" class="btn btn-outline-warning" data-toggle='modal' data-target='#modal2' (click)="view(lista.archivologro)">
+                <i class="fa fa-eye" aria-hidden="true"></i></button></td>
             </tr>
 
 
@@ -85,21 +85,68 @@ style="background-color: rgba(209, 176, 105, 0.966); border-color: none; border-
                 </div>
                 <div class="col-md-4">
                     <br>
-                    <input class="form-control form-control-sm" id="formFileSm" type="file" [(ngModel)]="aporte.archivologro">
-                </div>
+                
+                    <input type="file" accept=".png, jpg" (change)="onUpload($event)" class="form-control" placeholder="file">
+                  </div>
+                  <div class="progress"> 
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                    [style.width]="(uploadPercent | async) + '%' ">  
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <input  #imageDoc type="hidden" [value]="urlImage | async" >
+                
+                  </div>
               
-           
-
-
+          
         </div>
         <div class="modal-footer" >
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" (click)="create()" >Save changes</button>
+
+          <button *ngIf="urlImage | async; else btnDisable"
+          type="button" class="btn btn-primary" type="submit" (click)="create()" ><i class="fa fa-cloud" aria-hidden="true"></i>
+          </button>
+          <ng-template #btnDisable>
+            <button type="button" class="btn btn-secondary" type="submit" disabled="true" ><i class="fa fa-cloud" aria-hidden="true"></i>
+            </button>
+          </ng-template>
+
         </div>
       </div>
     </div>
   </div>      
 </div>
+
+
+
+
+<div class="container" > 
+  <div class="modal" tabindex="-1" id="modal2" >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header" style="background-color: #5a5a5a;">
+            <h4 class="modal-title" style="color:rgb(255, 255, 255); "> <i class="fa fa-cloud" aria-hidden="true"></i>
+            </h4>
+          </div>
+          <div class="modal-body" >
+              <div class="card text-center">
+
+                  <div class="card-body">
+                  <img [src]="aporte2.archivologro == null ? '/assets/images/alert/img2.png' : aporte2.archivologro " alt="" class="card-img-top">
+                  </div>
+              </div>
+                  
+          </div>
+          <div class="modal-footer" >
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">Close</button>
+           
+          </div>
+        </div>
+      </div>
+    </div>      
+  </div>
+
+
 
 
 
@@ -151,4 +198,8 @@ style="background-color: rgba(209, 176, 105, 0.966); border-color: none; border-
   </div>
   
 </div>
+
+
+
+
 
